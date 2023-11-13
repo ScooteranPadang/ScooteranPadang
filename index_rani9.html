@@ -1,0 +1,167 @@
+<html lang="en">
+
+<head>
+    <title>UAS</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function doSlide(slider) {
+            var id, o = slider.querySelectorAll("input.slide"),
+                last = o.length - 1,
+                current = slider.querySelector("input.slide:checked");
+            for (var i = 0; i < o.length; i++)
+                if (o[i] === current) {
+                    id = i;
+                    break;
+                }
+            o[id >= last ? 0 : id + 1].click();
+        }
+
+        function onSlide(e) {
+            var o = e.target.parentNode;
+            clearTimeout(o.autoslider);
+            o.autoslider = setTimeout(function () {
+                doSlide(o);
+            }, 7e3);
+        }
+        $(function () {
+            $(document).on("click", "input.slide", onSlide);
+            $(".slider").each(function () {
+                doSlide(this)
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="badan-utama">
+
+        <header>
+            <h2>SCOOTERAN PADANG</h2>
+            <p>Nikmati liburan bersama keluarga dengan Scooter Listrik</p>
+        </header>
+
+
+        <div class="banner">
+            <div class="slider">
+                <figure>
+		    <div class="slide">
+                        <img src="img/sc1.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc2.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc3.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc4.jpeg">
+                    </div>
+
+                </figure>
+            </div>
+        </div>
+        <div class="menu">
+            <ul id="navigasi">
+                <li><a class="active" href="index_rani9.html">Home</a></li>
+                <li><a href="about_rani9.html">About Us</a></li>
+                <li><a href="menu_rani9.html">Menu</a></li>
+                <li><a href="news_rani9.html">News</a></li>
+                <li><a href="contact_rani.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-kiri">
+            <div class="kotak">
+                <h3 style="background-color: darkorange;">Pemesanan</h3>
+                <p align="justify">Isi Form Pemesanan dengan Klik Tombol di bawah ini</p>
+                <a class="tombol" href="news_saiful.html" style="background-color: darkorange;">Pesan</a>
+            </div>
+            <div class="kotak">
+                <h3 style="background-color: darkorange;">Berita Terbaru</h3><br>
+                <p>Scooteran Padang merupakan salah satu UMKM yang berdiri dikawasan Pantai Purus Padang, usaha ini awal mulanya adalah sebuah usaha yang dibentuk oleh satu keluarga yang telah lama berjualan di Pantai Purus Padang.
+		   Mereka fokus ke menyewakan berbagai mainan mulai dari mainan anak-anak maupun orang dewasa.
+		   Melihat dari perkembangan zaman serta peminat dari masyarakat tentang objek wisata dipantai Padang yang semakin hari semakin meningkat ini.
+		   UMKM kecil yang hanya bermula dari menyewakan sepatu roda pada tahun 2018 dan mulai mengupdate usaha, pada masa itu sepatu roda sedang trendnya di Pantai Purus Padang pada saat itu. Seiring dengan berjalan waktu minat sepatu roda mulai berkurang
+		   hingga membuat pemilik usaha Ibuk Rina tidak kehabisan akal supaya rentalnya tidak habis pada saat itu. Sang pemilik usaha mulai menyewakan mainan anak-anak berupa mobil-mobilan yang dapat dikemudikan oleh anak-anak secara manual maupun dengan remot tanpa secara rupanya usaha itu sangat diminati oleh anak-anak usia balita maupun anak sekolah dasar.
+		   Dan seiring berjalannya waktu pemilik ingin usaha ini tidak hanya dapat dinikmati oleh kalangan anak-anak saja tetapi orang dewasa pun dapat menikmati rentalannya dan dapat bercengkrama dengan keluarga. Maka munculah sebuah ide usaha untuk menyewakan sepeda listrik atau yang biasanya disebut dengan Scooter Listrik. </p><br>
+                <hr>
+                </p><br>
+            </div>
+        </div>
+
+        <div class="menu-tengah">
+            <div id="clock" style="color:#00BCD4;"></div>
+            <script type="text/javascript">
+                function showTime() {
+                    var a_p = "";
+                    var today = new Date(); //digital
+                    var curr_hour = today.getHours(); //jam
+                    var curr_minute = today.getMinutes(); //menit
+                    var curr_second = today.getSeconds(); //detik
+                    if (curr_hour < 12) {
+                        a_p = "AM";
+                    } else {
+                        a_p = "PM";
+                    }
+                    if (curr_hour == 0) {
+                        curr_hour = 12;
+                    }
+                    if (curr_hour > 12) {
+                        curr_hour = curr_hour - 12;
+                    }
+                    curr_hour = checkTime(curr_hour);
+                    curr_minute = checkTime(curr_minute);
+                    curr_second = checkTime(curr_second);
+                    var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus',
+                        'September', 'Oktober',
+                        'November', 'Desember'
+                    ];
+                    var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                    var date = new Date();
+                    var day = date.getDate();
+                    var month = date.getMonth();
+                    var thisDay = date.getDay(),
+                        thisDay = myDays[thisDay];
+                    var yy = date.getYear();
+                    var year = (yy < 1000) ? yy + 1900 : yy;
+                    document.getElementById('clock').innerHTML = thisDay + ', ' + day + ' ' + months[month] + ' ' +
+                        year +
+                        " Pukul " + curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+                }
+
+                function checkTime(i) {
+                    if (i < 10) {
+                        i = "0" + i;
+                    }
+                    return i;
+                }
+                setInterval(showTime, 500);
+                //
+            </script>
+            <div class="kotak">
+                <h3 style="background-color: darkorange;">Scooter Listrik</h3>
+                <img src="img/sc1.jpeg" style="width:460px; height:230px;">
+                <p align="justify">Scooteran Padang merupakan wahana baru di pantai padang yang dapat dinikmati bersama dengan keluarga ataupun sahabat</p>
+            </div>
+        </div>
+        <div class="menu-kanan ">
+            <div class="kotak">
+                <h3 style="background-color: darkorange;">Foto</h3>
+                <img src="img/scooter3.jpeg">
+                <img src="img/scooter2.jpeg">
+                <center><strong>Jadwal Buka</strong><br>
+                <center>Senin-Minggu Jam 15.00 WIB - 23.00 WIB</center>
+            </div>
+        </div>
+        <footer>
+            @copyright 2022 || by Scooteran Padang
+        </footer>
+    </div>
+
+</body>
+
+</html>

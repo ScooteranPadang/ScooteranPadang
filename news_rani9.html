@@ -1,0 +1,171 @@
+<html lang="en">
+
+<head>
+    <title>UAS</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function doSlide(slider) {
+            var id, o = slider.querySelectorAll("input.slide"),
+                last = o.length - 1,
+                current = slider.querySelector("input.slide:checked");
+            for (var i = 0; i < o.length; i++)
+                if (o[i] === current) {
+                    id = i;
+                    break;
+                }
+            o[id >= last ? 0 : id + 1].click();
+        }
+
+        function onSlide(e) {
+            var o = e.target.parentNode;
+            clearTimeout(o.autoslider);
+            o.autoslider = setTimeout(function () {
+                doSlide(o);
+            }, 7e3);
+        }
+        $(function () {
+            $(document).on("click", "input.slide", onSlide);
+            $(".slider").each(function () {
+                doSlide(this)
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="badan-utama">
+
+        <header>
+            <h2>Scooteran Padang</h2>
+            <p>Nikmati liburan bersama keluarga dengan Scooter Listrik</p>
+        </header>
+
+
+        <div class="banner">
+            <div class="slider">
+                <figure>
+                    <div class="slide">
+                        <img src="img/sc1.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc2.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc3.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc4.jpeg">
+                    </div>
+
+                </figure>
+            </div>
+        </div>
+        <div class="menu">
+            <ul id="navigasi">
+                <li><a class="active" href="index_rani9.html">Home</a></li>
+                <li><a href="about_rani9.html">About Us</a></li>
+                <li><a href="menu_rani9.html">Menu</a></li>
+                <li><a href="news_rani9.html">News</a></li>
+                <li><a href="contact_rani9.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="content1">
+            <div id="clock" style="color:#00BCD4;text-align: right;"></div>
+            <script type="text/javascript">
+                function showTime() {
+                    var a_p = "";
+                    var today = new Date(); //digital
+                    var curr_hour = today.getHours(); //jam
+                    var curr_minute = today.getMinutes(); //menit
+                    var curr_second = today.getSeconds(); //detik
+                    if (curr_hour < 12) {
+                        a_p = "AM";
+                    } else {
+                        a_p = "PM";
+                    }
+                    if (curr_hour == 0) {
+                        curr_hour = 12;
+                    }
+                    if (curr_hour > 12) {
+                        curr_hour = curr_hour - 12;
+                    }
+                    curr_hour = checkTime(curr_hour);
+                    curr_minute = checkTime(curr_minute);
+                    curr_second = checkTime(curr_second);
+                    var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus',
+                        'September', 'Oktober',
+                        'November', 'Desember'
+                    ];
+                    var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                    var date = new Date();
+                    var day = date.getDate();
+                    var month = date.getMonth();
+                    var thisDay = date.getDay(),
+                        thisDay = myDays[thisDay];
+                    var yy = date.getYear();
+                    var year = (yy < 1000) ? yy + 1900 : yy;
+                    document.getElementById('clock').innerHTML = thisDay + ', ' + day + ' ' + months[month] + ' ' +
+                        year +
+                        " Pukul " + curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+                }
+
+                function checkTime(i) {
+                    if (i < 10) {
+                        i = "0" + i;
+                    }
+                    return i;
+                }
+                setInterval(showTime, 500);
+                //
+            </script>
+            <div class="content">
+                <h2 style="color: darkorange;" align="center">Berwisata di kawasan Pantai Padang</h2><br><br>
+                <p align="justify">
+                    Kawasan Pantai Padang, merupakan satu objek wisata yang selalu ramai dikunjungi oleh masyarakat khususnya pada sore hari.
+		    Saat sore hari, pemandangan Pantai Padang sungguh indah dengan sunset atau matahari tenggelamnnya dan hamparan lautan yang luas.
+                </p><br>
+                <p align="justify">
+                    Skuter listrik (secara internasional lebih dikenal sebagai electric kick-scooters atau e-scooters) adalah skuter yang 100% digerakan dengan tenaga listrik,
+		    sehingga tidak memproduksi asap dan suara bising. Skuter elektris biasanya mempunyai satu roda di depan dan di belakang. Kadang-kadang skuter elektris juga didesain dengan tiga roda.
+		    Kecepatan skuter elektris biasanya 20 – 50 km/jam, tetapi terdapat juga model yang bisa menempuh jarak hingga 80 km/per jam. Skuter elektris memiliki berat rata-rata antara 7 – 40 kg dan bisa dibebani dengan berat 100 – 200 kg.
+		    Walaupun kebanyakan skuter elektris digunakan dalam posisi berdiri dan hanya didesain untuk satu orang, tetapi ada juga beberapa skuter elektris yang memiliki lebih dari satu tempat duduk. Selain itu skuter elektris juga dikenal dengan mekanisme lipat yang cepat,
+		    sehingga memudahkan untuk disimpan dan dibawa. Di Indonesia orang menyingkatnya dengan sebutan skutis, yang merupakan singkatan dari skuter elekrtis
+                </p><br>
+            
+                </p><br>
+                <h2 style="color: darkorange;" align="center">Sejarah Scooter Listrik</h2><br><br>
+                <p align="justify">
+                   Skuter Elektris pertama kalinya dalam sejarah diproduksi oleh perusahaan Ajak Motor Vehicle yang berlokasi di New York City pada tahun 1900-an. Awal tahun 1920-an Ransome menciptakan sepeda elektris dengan French Corporation, kemudian diikuti Application Electro Mecaniques. Mereka menciptakan sebuah penemuan,
+		   yang mereka sebut dengan Electrocyclette, tahun 1927. Bagaimanapun bentuknya lebih seperti sepeda beroda 3 dibandingkan dengan skuter, karena ada roda satu di belakang dan dua roda di depan
+		   Selama periode Perang Dunia II, menunjukan bahwa bahan bakar gas begitu banyak dikonsumsi. Sehingga membuat orang berpikir untuk memperbaiki situasi seperti ini dengan membuat pengganti penggunaan gas untuk keperluan perjalanan.
+		   Selama periode ini, Earle Williams, seorang penemu mencoba untuk mengubah siklus yang dioperasikan dengan bahan bakar menjadi siklus listrik. Beberapa kemajuan dalam sejarah skuter listrik dibuat pada tahun 60-an dan 70-an.
+                </p><br>
+                <p align="justify">
+                    Scooteran Padang merupakan salah satu UMKM yang berdiri dikawasan Pantai Purus Padang, usaha ini awal mulanya adalah sebuah usaha yang dibentuk oleh satu keluarga yang telah lama berjualan di Pantai Purus Padang. Mereka fokus ke menyewakan berbagai mainan mulai dari mainan anak-anak maupun orang dewasa.
+		    Melihat dari perkembangan zaman serta peminat dari masyarakat tentang objek wisata dipantai Padang yang semakin hari semakin meningkat ini. UMKM kecil yang hanya bermula dari menyewakan sepatu roda pada tahun 2018 dan mulai mengupdate usaha, pada masa itu sepatu roda sedang trendnya di Pantai Purus Padang pada saat itu.
+	 	    Seiring dengan berjalan waktu minat sepatu roda mulai berkurang hingga membuat pemilik usaha Ibuk Rina tidak kehabisan akal supaya rentalnya tidak habis pada saat itu. Sang pemilik usaha mulai menyewakan mainan anak-anak berupa mobil-mobilan yang dapat dikemudikan oleh anak-anak secara manual maupun dengan remot tanpa secara rupanya usaha itu sangat 
+		   diminati oleh anak-anak usia balita maupun anak sekolah dasar.
+                </p><br>
+                <p align="justify">
+                    Dan seiring berjalannya waktu pemilik ingin usaha ini tidak hanya dapat dinikmati oleh kalangan anak-anak saja tetapi orang dewasa pun dapat menikmati rentalannya dan dapat bercengkrama dengan keluarga. Maka munculah sebuah ide usaha untuk menyewakan sepeda listrik atau yang biasanya disebut dengan Scooter Listrik. 
+		    Rupanya kabar ini disambut gembira oleh kalangan dewasa dan anak-anak karna antusias mereka mencoba untuk bermain scooter listrik ini. Permainan ini sangat mudah dilakukan karna hanya memencet tombol gas yang ada pada bagian depan scooter. Biasanya  Scooteran Padang ini beroperasi pada sore hari dan langsung diburu oleh anak-anak maupun remaja 
+		    dan tidak lupa juga mereka mengabadikan moment saat menaiki scooter tersebut
+                </p><br>
+		<p align="justify">
+		    Dengan hanya dibandrol dua puluh lima ribuh rupiah saja pengunjung dapat menikmati scooter dengan menyusuri kawasan Pantai Padang baik bersama teman, pacar maupun keluarga. Serta juga dapat menikmati sunset yang sangat indah di Pantai Padang. Dikawasan Pantai Purus Padang tidak hanya Ibu Rina saja yang memiliki
+		    sewa scooter tersebut, ada juga beberapa UMKM yang berada disana juga memiliki rentalan yang sama dengan yang dimiliki oleh Ibu Rina. Untuk membedakannya dengan pemilik lainnya ia memberikan penanda pada setiap scooternya agar menjadi ciri khas tersendiri yang dimiliki oleh Scooteran Padang.
+		</p><br>
+            </div>
+        </div>
+        <footer>
+            @copyright 2021 || by Scooteran Padang 
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<html lang="en">
+
+<head>
+    <title>UAS</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function doSlide(slider) {
+            var id, o = slider.querySelectorAll("input.slide"),
+                last = o.length - 1,
+                current = slider.querySelector("input.slide:checked");
+            for (var i = 0; i < o.length; i++)
+                if (o[i] === current) {
+                    id = i;
+                    break;
+                }
+            o[id >= last ? 0 : id + 1].click();
+        }
+
+        function onSlide(e) {
+            var o = e.target.parentNode;
+            clearTimeout(o.autoslider);
+            o.autoslider = setTimeout(function () {
+                doSlide(o);
+            }, 7e3);
+        }
+        $(function () {
+            $(document).on("click", "input.slide", onSlide);
+            $(".slider").each(function () {
+                doSlide(this)
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="badan-utama">
+
+        <header>
+            <h2>SCOOTRAN PADANG </h2>
+            <p>Nikmati liburan bersama keluarga dengan Scooter Listrik</p>
+        </header>
+
+
+        <div class="banner">
+            <div class="slider">
+                <figure>
+                    <div class="slide">
+                        <img src="img/sc1.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc2.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc3.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/sc4.jpeg">
+                    </div>
+
+                </figure>
+            </div>
+        </div>
+        <div class="menu">
+            <ul id="navigasi">
+                <li><a class="active" href="index_rani9.html">Home</a></li>
+                <li><a href="about_rani9.html">About Us</a></li>
+		<li><a href="menu_rani9.html">Menu</a></li>
+                <li><a href="news_rani9.html">News</a></li>
+                <li><a href="contact_rani9.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-kiri">
+            <div class="kotak">
+                <h3 style="background-color: darkorange;">Scooteran Padang</h3>
+                <strong>Alamat : Jl. Samudera Pantai Padang </strong><br>
+                <strong>Telp : 081325257580</strong><br>
+                <strong>No WA : 081325257580</strong><br>
+                <strong>Email : raninur2906@gmail.com</strong>
+            </div>
+        </div>
+
+        <div class="menu-tengah">
+            <div id="clock" style="color:#00BCD4;"></div>
+            <script type="text/javascript">
+                function showTime() {
+                    var a_p = "";
+                    var today = new Date(); //digital
+                    var curr_hour = today.getHours(); //jam
+                    var curr_minute = today.getMinutes(); //menit
+                    var curr_second = today.getSeconds(); //detik
+                    if (curr_hour < 12) {
+                        a_p = "AM";
+                    } else {
+                        a_p = "PM";
+                    }
+                    if (curr_hour == 0) {
+                        curr_hour = 12;
+                    }
+                    if (curr_hour > 12) {
+                        curr_hour = curr_hour - 12;
+                    }
+                    curr_hour = checkTime(curr_hour);
+                    curr_minute = checkTime(curr_minute);
+                    curr_second = checkTime(curr_second);
+                    var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus',
+                        'September', 'Oktober',
+                        'November', 'Desember'
+                    ];
+                    var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                    var date = new Date();
+                    var day = date.getDate();
+                    var month = date.getMonth();
+                    var thisDay = date.getDay(),
+                        thisDay = myDays[thisDay];
+                    var yy = date.getYear();
+                    var year = (yy < 1000) ? yy + 1900 : yy;
+                    document.getElementById('clock').innerHTML = thisDay + ', ' + day + ' ' + months[month] + ' ' +
+                        year +
+                        " Pukul " + curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+                }
+
+                function checkTime(i) {
+                    if (i < 10) {
+                        i = "0" + i;
+                    }
+                    return i;
+                }
+                setInterval(showTime, 500);
+                //
+            </script>
+            <div class="kotak">
+                <h3 style="color: darkorange;">Saran dan Keluhan</h3>
+                <form name="form">
+                    <table>
+                        <tr>
+                            <td>Subjek</td>
+                            <td> : <input type="text" name="nama" size="15"></td>
+                        </tr>
+                        <tr>
+                            <td>Nama Full</td>
+                            <td> : <input type="text" name="jumlahjam" size="15"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td> : <input type="text" name="upah" size="15"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number</td>
+                            <td> : <input type="text" name="jumlahanak" size="15"></td>
+                        </tr>
+                        <tr>
+                            <td>Message</td>
+                            <td> : <textarea name="comment" form="usrform" rows="5"
+                                    cols="30">Enter text here...</textarea></td>
+                        </tr>
+                    </table>
+                    <center><button style="background-color: darkorange; align-content: center;">Submit</button>
+                    </center>
+                </form>
+            </div>
+        
+        <footer>
+            @copyright 2022 || by Scooteran Padang
+        </footer>
+    </div>
+
+</body>
+
+</html>

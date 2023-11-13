@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: gainsboro;
+    font-family: verdana;
+}
+
+.badan-utama {
+    max-width: 1080px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 15px;
+    overflow: hidden;
+}
+
+header {
+    background-color: white;
+    color: darkorange;
+    padding: 20px;
+}
+
+header h2 {
+    margin-bottom: 7px;
+    font-size: 35px;
+    background-color: white;
+}
+
+#navigasi {
+    position: relative;
+    line-height: 30px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+#navigasi a {
+    display: block;
+    padding: 8px 16px;
+    background-color: darkorange;
+    color: #fff;
+    text-decoration: none;
+    width: 210px;
+}
+
+#navigasi a:hover {
+    background-color: #00BCD4;
+    color: #fff;
+}
+
+#navigasi li {
+    position: relative;
+    float: left;
+
+}
+
+#navigasi ul {
+    position: absolute;
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+#navigasi li ul a {
+    width: 12em;
+    height: auto;
+    float: left;
+}
+
+#navigasi li:hover ul {
+    display: block;
+}
+
+#navigasi li:hover ul ul {
+    display: none;
+}
+
+.banner {
+    margin-bottom: 15px;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    height: 330px;
+}
+
+.kotak {
+    border: 1px solid gainsboro;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.content {
+    width: 1050px;
+    border: 1px solid gainsboro;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.kotak h3 {
+
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 13px;
+}
+
+.kotak img {
+    display: block;
+    width: 240px;
+    margin-bottom: 10px;
+}
+
+.kotak p {
+    margin-bottom: 10px;
+}
+
+.menu-kiri {
+    width: 250px;
+    margin-right: 10px;
+    float: left;
+}
+
+.menu-kanan {
+    width: 250px;
+    margin-right: 10px;
+    float: left;
+}
+
+.menu-kanan iframe {
+    width: 250px;
+    height: 200px;
+    float: left;
+}
+
+.menu-tengah {
+    width: 480px;
+    margin-right: 10px;
+    float: left;
+}
+
+.content1 {
+    width: auto;
+    margin-right: 10px;
+    float: left;
+}
+
+footer {
+    clear: both;
+    background-color: darkorange;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.tombol {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    width: 120px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    background-color: darkorange;
+}
+
+.tombol:hover {
+    background-color: black;
+    transition-duration: 2s;
+}
+
+.menu-kanan,
+.menu-kiri,
+.menu-tengah iframe {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:1080px) {
+    .badan-utama {
+        width: 100%;
+    }
+
+    .menu {
+        clear: both;
+        float: none;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:780px) {
+
+    header h2,
+    header p {
+        text-align: center;
+    }
+
+    .navigasi li {
+        float: none;
+    }
+}
+
+.slider {
+    overflow: hidden;
+    height: 330px;
+    margin-bottom: 15px;
+    width: 1050px;
+}
+
+.slider figure div {
+    width: 20%;
+    float: left;
+}
+
+.slider figure img {
+    width: 100%;
+    float: left;
+}
+
+.slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slidy infinite;
+}
+
+@keyframes slidy {
+    0% {
+        left: 0%
+    }
+
+    10% {
+        left: 0%;
+    }
+
+    12% {
+        left: -100%;
+    }
+
+    22% {
+        left: -100%;
+    }
+
+    24% {
+        left: -200%;
+    }
+
+    34% {
+        left: -200%;
+    }
+
+    36% {
+        left: -300%;
+    }
+
+    46% {
+        left: -300%;
+    }
+
+    48% {
+        left: -400%;
+    }
+
+    58% {
+        left: -400%;
+    }
+
+    60% {
+        left: -300%;
+    }
+
+    70% {
+        left: -300%;
+    }
+
+    72% {
+        left: -200%;
+    }
+
+    82% {
+        left: -200%;
+    }
+
+
+}
